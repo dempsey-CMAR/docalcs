@@ -36,9 +36,9 @@
 #' @inheritParams do_salinity_correction
 #' @inheritParams do_pressure_correction
 #'
-#' @param dat Data frame with at least one column: \code{Temperature}.
+#' @param dat Data frame with at least one column: \code{temperature_degree_c}.
 #'   Corresponding salinity (psu) and pressure (atm) data may be included in
-#'   columns \code{Salinity} and \code{Pressure}. Additional columns will be
+#'   columns \code{salinity_psu} and \code{pressure_atm}. Additional columns will be
 #'   ignored and returned.
 #'
 #' @param method Equation to use to calculate dissolved oxygen solubility.
@@ -51,9 +51,7 @@
 #'   correction factor), and \code{C_p} (DO solubility).
 #'
 #'   If \code{FALSE}, the function returns \code{dat.wide} with additional
-#'   column(s) \code{Salinity}, \code{Pressure}, and \code{C_p}.
-#'
-#' @family Dissolved Oxygen
+#'   column(s) \code{salinity_psu}, \code{pressure_atm}, and \code{C_p}.
 #'
 #' @importFrom dplyr %>% mutate select
 #'
@@ -72,10 +70,10 @@ do_solubility <- function(dat,
 
     dat_out <- dat %>%
       mutate(
-        Temperature = as.numeric(Temperature),
+        temperature_degree_c = as.numeric(temperature_degree_c),
 
         # temperature in Kelvin
-        T_Kelvin = Temperature + 273.15,
+        T_Kelvin = temperature_degree_c + 273.15,
 
         # Equation 32 (modified to return units of mg / L)
         C_star = exp(
@@ -114,10 +112,10 @@ do_solubility <- function(dat,
 
     dat_out <- dat %>%
       mutate(
-        Temperature = as.numeric(Temperature),
+        temperature_degree_c = as.numeric(temperature_degree_c),
 
         # scaled temperature
-        T_s = log((298.15 - Temperature) / (273.15 + Temperature)),
+        T_s = log((298.15 - temperature_degree_c) / (273.15 + temperature_degree_c)),
 
         # oxygen solubility (equation 8, coefficients from first col Table 1)
         C_star = mg_L * exp(

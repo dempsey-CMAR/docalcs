@@ -13,9 +13,9 @@ do_solubility(
 )
 }
 \arguments{
-\item{dat}{Data frame with at least one column: \code{Temperature}.
+\item{dat}{Data frame with at least one column: \code{temperature_degree_c}.
 Corresponding salinity (psu) and pressure (atm) data may be included in
-columns \code{Salinity} and \code{Pressure}. Additional columns will be
+columns \code{salinity_psu} and \code{pressure_atm}. Additional columns will be
 ignored and returned.}
 
 \item{sal}{A single value of salinity (psu). This value must be specified if
@@ -39,7 +39,7 @@ Options are \code{method = "garcia-gordon"} (the default) and \code{method
   correction factor), and \code{C_p} (DO solubility).
 
   If \code{FALSE}, the function returns \code{dat.wide} with additional
-  column(s) \code{Salinity}, \code{Pressure}, and \code{C_p}.}
+  column(s) \code{salinity_psu}, \code{pressure_atm}, and \code{C_p}.}
 }
 \description{
 Calculate the solubility of dissolved oxygen based on
@@ -76,8 +76,3 @@ Solubility of dissolved oxygen (mg/L) is calculated using the
   USGS. \emph{Change to Solubility Equations for Oxygen in Water.} Technical
   Memorandum 2011.03. USGS Office of Water Quality, 2011.
 }
-\seealso{
-Other Dissolved Oxygen: 
-\code{\link{do_pressure_correction}()}
-}
-\concept{Dissolved Oxygen}

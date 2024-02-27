@@ -65,8 +65,3 @@ Dissolved oxygen concentration (and partial pressure?) measurements
   USGS. \emph{Change to Solubility Equations for Oxygen in Water.} Technical
   Memorandum 2011.03. USGS Office of Water Quality, 2011.
 }
-\seealso{
-Other Dissolved Oxygen: 
-\code{\link{do_solubility}()}
-}
-\concept{Dissolved Oxygen}

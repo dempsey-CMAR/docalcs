@@ -53,8 +53,6 @@
 #' @return Returns \code{dat_wide} with additional column(s), \code{F_p} and
 #'   \code{Pressure}.
 #'
-#' @family Dissolved Oxygen
-#'
 #' @importFrom dplyr %>% mutate
 #'
 #' @export
