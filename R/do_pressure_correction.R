@@ -104,7 +104,7 @@ do_pressure_correction <- function(dat_wide, sal = NULL, p_atm = NULL){
         ),
 
       # square brackets term in Equation 24
-      alt_correction = (((1 - P_wv /Pressure) * (1 - theta * pressure_atm)) /
+      alt_correction = (((1 - P_wv /pressure_atm) * (1 - theta * pressure_atm)) /
         ((1 - P_wv) * (1 - theta))),
 
       F_p = pressure_atm * alt_correction,
