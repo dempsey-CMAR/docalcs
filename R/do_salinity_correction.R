@@ -123,7 +123,7 @@ do_salinity_correction <- function(
         T_Kelvin = temperature_degree_c  + 273.15,
 
         # correction factor
-        F_s = exp(-Salinity * (B0_BK + B1_BK / T_Kelvin + B2_BK / T_Kelvin^2)),
+        F_s = exp(-salinity_psu * (B0_BK + B1_BK / T_Kelvin + B2_BK / T_Kelvin^2)),
         F_s = round(F_s, digits = 4)
       ) %>%
       select(-T_Kelvin)
