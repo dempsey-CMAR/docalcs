@@ -10,5 +10,5 @@ LazyData: true
 RoxygenNote: 7.3.3
 Imports: 
     dplyr
-URL: https://github.com/dempsey-CMAR/docalcs
-BugReports: https://github.com/dempsey-CMAR/docalcs/issues
+URL: https://github.com/Centre-for-Marine-Applied-Research/docalcs
+BugReports: https://github.com/Centre-for-Marine-Applied-Research/docalcs/issues
